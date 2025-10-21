@@ -1,0 +1,21 @@
+services:
+  pharmacy-prod:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '3003:3003'
+    environment:
+      - NODE_ENV=production
+
+  pharmacy-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - '8085:8085'
+    environment:
+      - NODE_ENV=development
