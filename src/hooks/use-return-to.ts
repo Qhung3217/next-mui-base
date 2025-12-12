@@ -1,5 +1,7 @@
 'use client';
 
+import type { NavSectionProps } from 'src/components/nav-section';
+
 import { useMemo } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
 
@@ -7,10 +9,12 @@ import { paths } from 'src/routes/paths';
 
 import { CONFIG } from 'src/global-config';
 import { PERMISSIONS } from 'src/constants';
-import { navData } from 'src/features/dashboard';
 import { useAuthContext } from 'src/features/auth';
 
-export const useReturnTo = (returnToDefault: string = CONFIG.auth.redirectPath) => {
+export const useReturnTo = (
+  navData: NavSectionProps['data'],
+  returnToDefault: string = CONFIG.auth.redirectPath
+) => {
   const { permissions } = useAuthContext();
 
   const pathname = usePathname();

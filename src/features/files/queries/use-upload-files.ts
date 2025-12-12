@@ -1,8 +1,8 @@
 import { useMutation } from '@tanstack/react-query';
 
-import { fileService } from 'src/services';
+import { fileApi } from '../api';
 
 export const useUploadFiles = () =>
   useMutation({
-    mutationFn: fileService.uploadMany,
+    mutationFn: fileApi.uploadMany,
   });

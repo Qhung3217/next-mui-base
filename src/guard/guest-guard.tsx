@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import { paths } from 'src/routes/paths';
 import { useRouter } from 'src/routes/hooks';
 
+import { navData } from 'src/layouts';
 import { useReturnTo } from 'src/hooks';
 import { useAuthContext } from 'src/features/auth';
 
@@ -18,7 +19,7 @@ type GuestGuardProps = {
 
 export function GuestGuard({ children }: GuestGuardProps) {
   const router = useRouter();
-  const { returnTo, createRedirectPath } = useReturnTo();
+  const { returnTo, createRedirectPath } = useReturnTo(navData);
 
   const { loading, authenticationState } = useAuthContext();
 
