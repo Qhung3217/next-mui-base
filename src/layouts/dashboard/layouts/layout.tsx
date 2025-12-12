@@ -21,8 +21,8 @@ import { Logo } from 'src/components/logo';
 import { useSettingsContext } from 'src/components/settings';
 
 import { VerticalDivider } from './content';
-import { navData as dashboardNavData } from './nav-config';
 import { managerLayoutVars, managerNavColorVars } from './css-vars';
+import { navData as dashboardNavData } from '../../nav-config-dashboard';
 import { NavMobile, NavVertical, NavHorizontal, AccountPopover } from '../components';
 
 // ----------------------------------------------------------------------

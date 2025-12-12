@@ -2,4 +2,4 @@ export * from './layout';
 
 export * from './content';
 
-export * from './nav-config';
+export * from '../../nav-config-dashboard';
