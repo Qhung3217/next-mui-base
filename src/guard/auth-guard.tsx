@@ -7,10 +7,9 @@ import { useRouter } from 'src/routes/hooks';
 
 import { useReturnTo } from 'src/hooks';
 import { CONFIG } from 'src/global-config';
+import { useAuthContext } from 'src/features/auth';
 
 import { SplashScreen } from 'src/components/loading-screen';
-
-import { useAuthContext } from '../../hooks';
 
 // ----------------------------------------------------------------------
 
@@ -26,7 +25,7 @@ export function AuthGuard({ children }: AuthGuardProps) {
   const router = useRouter();
   const { createRedirectPath } = useReturnTo();
 
-  const { authenticationState, loading } = useAuthContext();
+  const { authenticationState } = useAuthContext();
 
   const [isChecking, setIsChecking] = useState(true);
 

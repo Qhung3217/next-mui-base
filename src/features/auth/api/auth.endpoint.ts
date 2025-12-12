@@ -1,4 +1,4 @@
-export const authApi = {
+export const authEndpoint = {
   me: '/auth/me',
   accessBranch: '/auth/access-branch',
   signIn: '/auth/sign-in',

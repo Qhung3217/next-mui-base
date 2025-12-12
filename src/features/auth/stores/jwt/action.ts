@@ -1,12 +1,11 @@
 'use client';
 
-import type { SignIn, AccessBranch } from '../../models';
+import type { SignIn, AccessBranch } from '../../data';
 
 import { getCookie } from 'minimal-shared/utils';
 
-import { authService } from 'src/services';
-
-import { mapSignIn, mapAccessBranch } from '../../mappers';
+import { authApi } from '../../api';
+import { mapSignIn, mapAccessBranch } from '../../data';
 import { JWT_SIGN_IN_KEY, JWT_ACCESS_TOKEN_KEY, JWT_REFRESH_TOKEN_STORAGE_KEY } from './constant';
 import {
   setSession,
@@ -35,7 +34,7 @@ export type SignUpParams = {
  *************************************** */
 export const signInWithPassword = async (body: SignInParams): Promise<SignIn> => {
   try {
-    const data = await authService.signIn(body);
+    const data = await authApi.signIn(body);
 
     const { signInToken } = data;
 
@@ -69,7 +68,7 @@ export const signInWithPassword = async (body: SignInParams): Promise<SignIn> =>
 //   };
 
 //   try {
-//     const res = await axios.post(authService.signIn, params);
+//     const res = await axios.post(authApi.signIn, params);
 
 //     const { accessToken } = res.data;
 
@@ -107,7 +106,7 @@ export const refresh = async (): Promise<{ accessToken: string }> => {
     }
 
     if (isValidToken(refreshToken)) {
-      const data = await authService.refresh(refreshToken);
+      const data = await authApi.refresh(refreshToken);
       clearStorageTimeout(JWT_ACCESS_TOKEN_KEY);
 
       setSession(JWT_ACCESS_TOKEN_KEY, data.accessToken, refresh);
@@ -133,7 +132,7 @@ export const accessBranch = async (branchId: string): Promise<AccessBranch> => {
     }
 
     if (isValidToken(signInToken)) {
-      const data = await authService.accessBranch(branchId);
+      const data = await authApi.accessBranch(branchId);
       setSession(JWT_ACCESS_TOKEN_KEY, data.accessToken, refresh);
       setSession(JWT_REFRESH_TOKEN_STORAGE_KEY, data.refreshToken);
       sessionStorage.removeItem(JWT_SIGN_IN_KEY);

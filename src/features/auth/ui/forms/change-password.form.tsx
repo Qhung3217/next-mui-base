@@ -14,8 +14,7 @@ import { Iconify } from 'src/components/iconify';
 import { Form, Field } from 'src/components/hook-form';
 import BlockField from 'src/components/hook-form/block-field';
 
-import { useChangePasswordForm } from '../hooks';
-import useChangePasswordFormLogic from '../hooks/use-change-password-form-logic';
+import { useChangePasswordFormController } from '../../hooks';
 
 // ----------------------------------------------------------------------
 
@@ -25,21 +24,20 @@ type Props = {
     root?: SxProps;
   };
 };
-export default function ChangePasswordView({ onSubmit: emitSubmit, slotProps }: Props) {
+export default function ChangePasswordForm({ onSubmit: emitSubmit, slotProps }: Props) {
   const showPassword = useBoolean();
 
-  const { methods } = useChangePasswordForm();
-
-  const { handleSubmit: handleFormSubmit } = useChangePasswordFormLogic({
-    onSuccess: showPassword.onFalse,
-    onSubmit: emitSubmit,
+  const { methods, handleSubmit: handleFormSubmit } = useChangePasswordFormController({
+    onSuccess: () => {
+      showPassword.onFalse();
+      emitSubmit?.();
+    },
   });
 
   const {
     reset,
     handleSubmit,
     formState: { isSubmitting },
-    setError,
   } = methods;
 
   const onSubmit = handleSubmit(async (data) => {

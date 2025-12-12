@@ -1,8 +1,8 @@
 import { z as zod } from 'zod';
 
-export type ChangePassWordSchemaType = zod.infer<typeof ChangePassWordSchema>;
+export type ChangePasswordSchemaType = zod.infer<typeof ChangePasswordSchema>;
 
-export const ChangePassWordSchema = zod
+export const ChangePasswordSchema = zod
   .object({
     oldPassword: zod
       .string()

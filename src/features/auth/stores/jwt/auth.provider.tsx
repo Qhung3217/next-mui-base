@@ -9,8 +9,8 @@ import { useMemo, useEffect, useCallback } from 'react';
 import { authService } from 'src/services';
 
 import { refresh } from './action';
-import { mapMe } from '../../mappers';
-import { AuthContext } from '../auth.context';
+import { mapMe } from '../../data';
+import { AuthContext } from './auth.context';
 import { setSession, isValidToken } from './utils';
 import { JWT_ACCESS_TOKEN_KEY, JWT_REFRESH_TOKEN_STORAGE_KEY } from './constant';
 

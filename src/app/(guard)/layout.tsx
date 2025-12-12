@@ -1,5 +1,5 @@
+import { AuthGuard } from 'src/guard';
 import { CONFIG } from 'src/global-config';
-import { AuthGuard } from 'src/features/auth';
 
 // ----------------------------------------------------------------------
 

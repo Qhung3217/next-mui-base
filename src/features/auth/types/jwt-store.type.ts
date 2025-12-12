@@ -1,4 +1,4 @@
-import type { Me } from '../models';
+import type { Me } from '../data';
 
 export type AuthenticationState = 'loading' | 'authenticated' | 'unauthenticated' | 'select-branch';
 

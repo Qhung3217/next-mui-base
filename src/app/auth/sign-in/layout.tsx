@@ -1,5 +1,4 @@
-import { AuthCenteredLayout } from 'src/features/auth';
-
+import { AuthCenteredLayout } from 'src/layouts';
 // ----------------------------------------------------------------------
 
 type Props = {

@@ -6,10 +6,9 @@ import { paths } from 'src/routes/paths';
 import { useRouter } from 'src/routes/hooks';
 
 import { useReturnTo } from 'src/hooks';
+import { useAuthContext } from 'src/features/auth';
 
 import { SplashScreen } from 'src/components/loading-screen';
-
-import { useAuthContext } from '../../hooks';
 
 // ----------------------------------------------------------------------
 

@@ -1,6 +1,6 @@
 import { Dialog, Divider, DialogTitle, DialogContent } from '@mui/material';
 
-import { ChangePasswordForm } from '.';
+import { ChangePasswordForm } from '../forms';
 
 type Props = {
   open: boolean;

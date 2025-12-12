@@ -2,7 +2,7 @@
 
 import { use } from 'react';
 
-import { AuthContext } from '../stores/auth.context';
+import { AuthContext } from '../stores/jwt/auth.context';
 
 // ----------------------------------------------------------------------
 

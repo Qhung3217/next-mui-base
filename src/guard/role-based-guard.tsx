@@ -7,11 +7,10 @@ import { m } from 'framer-motion';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 
+import { useAuthContext } from 'src/features/auth';
 import { ForbiddenIllustration } from 'src/assets/illustrations';
 
 import { varBounce, MotionContainer } from 'src/components/animate';
-
-import { useAuthContext } from '../../hooks';
 
 // ----------------------------------------------------------------------
 
