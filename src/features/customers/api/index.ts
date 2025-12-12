@@ -1,5 +1,3 @@
-export * from './customer-keys';
-
-export * from './mock-invoice-data';
-
-export * from './mock-customer-data';
+export * from './customer.api';
+export * from './customer.endpoint';
+export * from './customer.query-key';

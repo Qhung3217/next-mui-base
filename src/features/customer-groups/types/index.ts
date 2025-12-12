@@ -1,1 +1,1 @@
-export * from './customer-group.type';
+export * from './customer-group-api.type';
