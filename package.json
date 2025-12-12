@@ -56,7 +56,7 @@
     "es-toolkit": "^1.39.8",
     "framer-motion": "^12.23.12",
     "minimal-shared": "^1.0.15",
-    "next": "^15.4.6",
+    "next": "15.4.10",
     "nprogress": "^0.2.0",
     "react": "^19.1.1",
     "react-apexcharts": "^1.7.0",
