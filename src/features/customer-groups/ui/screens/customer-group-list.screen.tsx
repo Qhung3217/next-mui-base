@@ -10,8 +10,8 @@ import Typography from '@mui/material/Typography';
 
 import { useQueryParam } from 'src/hooks';
 import { PERMISSIONS } from 'src/constants';
+import { ManagerContent } from 'src/layouts';
 import { useCheckPermission } from 'src/features/auth';
-import { ManagerContent } from 'src/features/dashboard';
 
 import { CustomerGroupForm } from '../forms';
 import { CustomerGroupTable } from '../table';
