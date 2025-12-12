@@ -1,4 +1,4 @@
-import { GuestGuard } from 'src/features/auth';
+import { GuestGuard } from 'src/guard';
 
 // ----------------------------------------------------------------------
 

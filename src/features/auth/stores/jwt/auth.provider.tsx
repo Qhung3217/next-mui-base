@@ -6,10 +6,9 @@ import { getCookie } from 'minimal-shared/utils';
 import { useSetState } from 'minimal-shared/hooks';
 import { useMemo, useEffect, useCallback } from 'react';
 
-import { authService } from 'src/services';
-
 import { refresh } from './action';
 import { mapMe } from '../../data';
+import { authApi } from '../../api';
 import { AuthContext } from './auth.context';
 import { setSession, isValidToken } from './utils';
 import { JWT_ACCESS_TOKEN_KEY, JWT_REFRESH_TOKEN_STORAGE_KEY } from './constant';
@@ -47,7 +46,7 @@ export function AuthProvider({ children }: Props) {
 
   const handleAccessTokenValid = async (token: string) => {
     setSession(JWT_ACCESS_TOKEN_KEY, token, refresh);
-    const meData = await authService.me();
+    const meData = await authApi.me();
     setState({ ...mapMe(meData), loading: false, authenticationState: 'authenticated' });
   };
 

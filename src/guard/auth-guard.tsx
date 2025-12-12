@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import { paths } from 'src/routes/paths';
 import { useRouter } from 'src/routes/hooks';
 
+import { navData } from 'src/layouts';
 import { useReturnTo } from 'src/hooks';
 import { CONFIG } from 'src/global-config';
 import { useAuthContext } from 'src/features/auth';
@@ -23,7 +24,7 @@ const signInPaths = {
 
 export function AuthGuard({ children }: AuthGuardProps) {
   const router = useRouter();
-  const { createRedirectPath } = useReturnTo();
+  const { createRedirectPath } = useReturnTo(navData);
 
   const { authenticationState } = useAuthContext();
 
