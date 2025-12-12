@@ -1,5 +1,3 @@
-export * from './dto';
-
 export * from './me.model';
 
 export * from './sign-in.model';

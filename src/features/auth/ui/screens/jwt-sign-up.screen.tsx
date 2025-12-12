@@ -18,12 +18,12 @@ import { useRouter } from 'src/routes/hooks';
 import { RouterLink } from 'src/routes/components';
 
 import { getErrorMessage } from 'src/utils';
+import { AuthCenteredContent } from 'src/layouts';
 
 import { Iconify } from 'src/components/iconify';
 import { Form, Field, schemaUtils } from 'src/components/hook-form';
 
-import { useAuthContext } from '../hooks';
-import { AuthCenteredContent } from '../layouts';
+import { useAuthContext } from '../../hooks';
 import { FormHead } from '../components/form-head';
 import { SignUpTerms } from '../components/sign-up-terms';
 // ----------------------------------------------------------------------

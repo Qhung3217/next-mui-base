@@ -1,3 +1,5 @@
+'use client';
+
 import type { ChangePasswordSchemaType } from '../schema';
 
 import { toast } from 'sonner';

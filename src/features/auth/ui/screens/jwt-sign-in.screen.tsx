@@ -1,6 +1,6 @@
-// features/auth/components/jwt-views/jwt-sign-in-view.tsx
-
 'use client';
+
+import type { SignInSchemaType } from '../../schema';
 
 import { useForm } from 'react-hook-form';
 import { useBoolean } from 'minimal-shared/hooks';
@@ -13,15 +13,15 @@ import IconButton from '@mui/material/IconButton';
 import InputAdornment from '@mui/material/InputAdornment';
 
 import { CONFIG } from 'src/global-config';
+import { AuthCenteredContent } from 'src/layouts';
 
 import { Iconify } from 'src/components/iconify';
 import { Form, Field } from 'src/components/hook-form';
 import { AnimateLogoRotate } from 'src/components/animate';
 
-import { useJwtSignIn } from '../hooks';
-import { AuthCenteredContent } from '../layouts';
+import { useJwtSignIn } from '../../hooks';
+import { SignInSchema } from '../../schema';
 import { FormHead } from '../components/form-head';
-import { SignInSchema, type SignInSchemaType } from '../schema';
 
 // ----------------------------------------------------------------------
 

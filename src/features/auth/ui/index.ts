@@ -1,3 +1,4 @@
 export * from './forms';
-export * from './table';
 export * from './screens';
+export * from './sections';
+export * from './components';

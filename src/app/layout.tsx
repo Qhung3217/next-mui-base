@@ -7,7 +7,6 @@ import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 
 import { QueryProvider } from 'src/lib';
 import { CONFIG } from 'src/global-config';
-import { StoreProvider } from 'src/stores';
 import { AuthProvider } from 'src/features/auth';
 import { LocalizationProvider } from 'src/locales';
 import { themeConfig, ThemeProvider, primary as primaryColor } from 'src/theme';
@@ -87,30 +86,28 @@ export default async function RootLayout({ children }: RootLayoutProps) {
         />
 
         <QueryProvider>
-          <StoreProvider>
-            <AuthProvider>
-              <SettingsProvider
-                cookieSettings={appConfig.cookieSettings}
-                defaultSettings={defaultSettings}
-              >
-                <LocalizationProvider>
-                  <AppRouterCacheProvider options={{ key: 'css' }}>
-                    <ThemeProvider
-                      modeStorageKey={themeConfig.modeStorageKey}
-                      defaultMode={themeConfig.defaultMode}
-                    >
-                      <MotionLazy>
-                        <Snackbar />
-                        <ProgressBar />
-                        <SettingsDrawer defaultSettings={defaultSettings} />
-                        {children}
-                      </MotionLazy>
-                    </ThemeProvider>
-                  </AppRouterCacheProvider>
-                </LocalizationProvider>
-              </SettingsProvider>
-            </AuthProvider>
-          </StoreProvider>
+          <AuthProvider>
+            <SettingsProvider
+              cookieSettings={appConfig.cookieSettings}
+              defaultSettings={defaultSettings}
+            >
+              <LocalizationProvider>
+                <AppRouterCacheProvider options={{ key: 'css' }}>
+                  <ThemeProvider
+                    modeStorageKey={themeConfig.modeStorageKey}
+                    defaultMode={themeConfig.defaultMode}
+                  >
+                    <MotionLazy>
+                      <Snackbar />
+                      <ProgressBar />
+                      <SettingsDrawer defaultSettings={defaultSettings} />
+                      {children}
+                    </MotionLazy>
+                  </ThemeProvider>
+                </AppRouterCacheProvider>
+              </LocalizationProvider>
+            </SettingsProvider>
+          </AuthProvider>
         </QueryProvider>
       </body>
     </html>
