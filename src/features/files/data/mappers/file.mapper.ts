@@ -1,4 +1,5 @@
-import type { File, FileDTO, FileShort, FileShortDTO } from '../models';
+import type { File, FileShort } from '../models';
+import type { FileDTO, FileShortDTO } from '../dto';
 
 export const mapFile = (dto: FileDTO): File => ({
   createdAt: dto.createdAt,
